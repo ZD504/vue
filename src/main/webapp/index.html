@@ -3,17 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <title>Vue Demo</title>
-<script type="./vue.js"></script>
+<script src="./vue.js"></script>
 </head>
 <body>
-	<div id="root">{{msg}}</div>
-	
+	<div id="root">
+		<div v-on:click="handleClick">{{content}}</div>
+	</div>
 	<script>
 		new Vue({
-			el: "#root"
+			el: "#root",
 			data: {
-				msg: "hello world"
-			}
+				content: "hello"
+				},
+				methods: {
+					handleClick: function(){
+					this.content = "world"
+					}
+				}
 		})
 	</script>
 </body>
